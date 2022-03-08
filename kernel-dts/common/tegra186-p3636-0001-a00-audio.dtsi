@@ -19,6 +19,7 @@
  */
 
 #include <audio/tegra-platforms-audio-dai-links.dtsi>
+#include <audio/tegra186-audio-dai-links.dtsi>
 
 / {
 	hda@3510000 {
@@ -28,7 +29,7 @@
 	tegra_sound: sound {
 		status = "okay";
 		compatible = "nvidia,tegra-audio-t186ref-mobile-rt565x";
-		nvidia,model = "tegra-snd-t186ref-mobile-rt565x";
+		nvidia-audio-card,name = "tegra-snd-t186ref-mobile-rt565x";
 		clocks = <&tegra_car TEGRA186_CLK_PLLA>,
 			 <&tegra_car TEGRA186_CLK_PLL_A_OUT0>,
 			 <&tegra_car TEGRA186_CLK_AUD_MCLK>;
@@ -40,13 +41,10 @@
 		resets = <&tegra_car TEGRA186_RESET_AUD_MCLK>;
 		reset-names = "extern1_rst";
 
-		mclk-fs = <256>;
+		nvidia-audio-card,mclk-fs = <256>;
 
-		/* TODO Avoid rt565x_dai_link definition by modifying common base file
-		 * since current base does not have definition of dai link as
-		 * rt565x_dai_link,  had to add here
-		 */
-		hdr40_snd_link_i2s: rt565x_dai_link: nvidia,dai-link-1 { };
 		hdr40_i2c1: i2c@c240000 { };
 	};
 };
+
+hdr40_snd_link_i2s: &i2s1_to_codec { };
