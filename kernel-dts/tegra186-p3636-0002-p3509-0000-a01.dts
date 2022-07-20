@@ -163,21 +163,23 @@
 		compatible = "nvidia,tegra-udrm";
 	};
 
-	host1x {
-		nvdisplay@15200000 {
-			status = "okay";
-			nvidia,dc-or-node = "/host1x/sor1";
-			nvidia,dc-connector = <&sor1>;
-			nvidia,fb-win = <0>;
-			win-mask = <0x7>;
-		};
-		nvdisplay@15210000 {
-			status = "okay";
-			bootloader-status = "disabled";
-			nvidia,dc-or-node = "/host1x/sor";
-			nvidia,dc-connector = <&sor0>;
-			nvidia,fb-win = <3>;
-			win-mask = <0x38>;
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15200000 {
+				status = "okay";
+				nvidia,dc-or-node = "/host1x/sor1";
+				nvidia,dc-connector = <&sor1>;
+				nvidia,fb-win = <0>;
+				win-mask = <0x7>;
+			};
+			display@15210000 {
+				status = "okay";
+				bootloader-status = "disabled";
+				nvidia,dc-or-node = "/host1x/sor";
+				nvidia,dc-connector = <&sor0>;
+				nvidia,fb-win = <3>;
+				win-mask = <0x38>;
+			};
 		};
 		sor {
 			status = "okay";

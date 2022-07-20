@@ -21,45 +21,47 @@
 #include <t18x-common-platforms/tegra186-dp.dtsi>
 
 / {
-	host1x {
-		nvdisplay@15200000 {
-			status = "disabled";
-			nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
-			nvidia,emc-clk-rate = <300000000>;
-			nvidia,fb-bpp = <32>;
-			nvidia,fb-flags = <TEGRA_FB_FLIP_ON_PROBE>;
-			nvidia,fb-win = <0>;
-			win-mask = <0x3>;
-			nvidia,dc-or-node = "/host1x/dsi";
-			nvidia,dc-connector = <&dsi>;
-			nvidia,cmu-enable = <1>;
-		};
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15200000 {
+				status = "disabled";
+				nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
+				nvidia,emc-clk-rate = <300000000>;
+				nvidia,fb-bpp = <32>;
+				nvidia,fb-flags = <TEGRA_FB_FLIP_ON_PROBE>;
+				nvidia,fb-win = <0>;
+				win-mask = <0x3>;
+				nvidia,dc-or-node = "/host1x/dsi";
+				nvidia,dc-connector = <&dsi>;
+				nvidia,cmu-enable = <1>;
+			};
 
-		nvdisplay@15210000 {
-			status = "disabled";
-			nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
-			nvidia,emc-clk-rate = <300000000>;
-			nvidia,fb-bpp = <32>; /* bits per pixel */
-			nvidia,fb-flags = <TEGRA_FB_FLIP_ON_PROBE>;
-			nvidia,fb-win = <2>;
-			win-mask = <0xc>;
-			nvidia,dc-or-node = "/host1x/sor1";
-			nvidia,dc-connector = <&sor1>;
-			nvidia,cmu-enable = <1>;
-		};
+			display@15210000 {
+				status = "disabled";
+				nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
+				nvidia,emc-clk-rate = <300000000>;
+				nvidia,fb-bpp = <32>; /* bits per pixel */
+				nvidia,fb-flags = <TEGRA_FB_FLIP_ON_PROBE>;
+				nvidia,fb-win = <2>;
+				win-mask = <0xc>;
+				nvidia,dc-or-node = "/host1x/sor1";
+				nvidia,dc-connector = <&sor1>;
+				nvidia,cmu-enable = <1>;
+			};
 
 
-		nvdisplay@15220000 {
-			status = "disabled";
-			nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
-			nvidia,emc-clk-rate = <300000000>;
-			nvidia,fb-bpp = <32>; /* bits per pixel */
-			nvidia,fb-win = <4>;
-			nvidia,fb-flags = <TEGRA_FB_FLIP_ON_PROBE>;
-			win-mask = <0x30>;
-			nvidia,dc-or-node = "/host1x/sor";
-			nvidia,dc-connector = <&sor0>;
-			nvidia,cmu-enable = <1>;
+			display@15220000 {
+				status = "disabled";
+				nvidia,dc-flags = <TEGRA_DC_FLAG_ENABLED>;
+				nvidia,emc-clk-rate = <300000000>;
+				nvidia,fb-bpp = <32>; /* bits per pixel */
+				nvidia,fb-win = <4>;
+				nvidia,fb-flags = <TEGRA_FB_FLIP_ON_PROBE>;
+				win-mask = <0x30>;
+				nvidia,dc-or-node = "/host1x/sor";
+				nvidia,dc-connector = <&sor0>;
+				nvidia,cmu-enable = <1>;
+			};
 		};
 
 		dsi {

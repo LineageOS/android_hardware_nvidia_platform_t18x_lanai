@@ -62,54 +62,56 @@
 		phy_pllvdd-supply = <&spmic_sd1>;
 	};
 
-	host1x {
-		nvdisplay@15200000 {
-			vdd-dp-pwr-supply = <&battery_reg>;
-			avdd-dp-pll-supply = <&battery_reg>;
-			vdd-edp-sec-mode-supply = <&battery_reg>;
-			vdd-dp-pad-supply = <&battery_reg>;
-			avdd_hdmi-supply = <&spmic_ldo7>;
-			avdd_hdmi_pll-supply = <&spmic_sd2>;
-			vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
-			/* Used fixed regulator for P3509 CVB,
-			   can change for other CVB if have GPIO enabled regulator*/
-			avdd_lcd-supply = <&vdd_disp_3v3>;
-			dvdd_lcd-supply = <&vdd_1v8_ap>;
-			avdd_dsi_csi-supply = <&spmic_sd1>;
-			vdd_lcd_bl-supply = <&battery_reg>;
-			vdd_lcd_bl_en-supply = <&vdd_bl_en>;
-		};
-		nvdisplay@15210000 {
-			vdd-dp-pwr-supply = <&battery_reg>;
-			avdd-dp-pll-supply = <&battery_reg>;
-			vdd-edp-sec-mode-supply = <&battery_reg>;
-			vdd-dp-pad-supply = <&battery_reg>;
-			avdd_hdmi-supply = <&spmic_ldo7>;
-			avdd_hdmi_pll-supply = <&spmic_sd2>;
-			vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
-			/* Used fixed regulator for P3509 CVB,
-			   can change for other CVB if have GPIO enabled regulator*/
-			avdd_lcd-supply = <&vdd_disp_3v3>;
-			dvdd_lcd-supply = <&vdd_1v8_ap>;
-			avdd_dsi_csi-supply = <&spmic_sd1>;
-			vdd_lcd_bl-supply = <&battery_reg>;
-			vdd_lcd_bl_en-supply = <&vdd_bl_en>;
-		};
-		nvdisplay@15220000 {
-			vdd-dp-pwr-supply = <&battery_reg>;
-			avdd-dp-pll-supply = <&battery_reg>;
-			vdd-edp-sec-mode-supply = <&battery_reg>;
-			vdd-dp-pad-supply = <&battery_reg>;
-			avdd_hdmi-supply = <&spmic_ldo7>;
-			avdd_hdmi_pll-supply = <&spmic_sd2>;
-			vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
-			/* Used fixed regulator for P3509 CVB,
-			   can change for other CVB if have GPIO enabled regulator*/
-			avdd_lcd-supply = <&vdd_disp_3v3>;
-			dvdd_lcd-supply = <&vdd_1v8_ap>;
-			avdd_dsi_csi-supply = <&spmic_sd1>;
-			vdd_lcd_bl-supply = <&battery_reg>;
-			vdd_lcd_bl_en-supply = <&vdd_bl_en>;
+	host1x@13e00000 {
+		display-hub@15200000 {
+			display@15200000 {
+				vdd-dp-pwr-supply = <&battery_reg>;
+				avdd-dp-pll-supply = <&battery_reg>;
+				vdd-edp-sec-mode-supply = <&battery_reg>;
+				vdd-dp-pad-supply = <&battery_reg>;
+				avdd_hdmi-supply = <&spmic_ldo7>;
+				avdd_hdmi_pll-supply = <&spmic_sd2>;
+				vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
+				/* Used fixed regulator for P3509 CVB,
+				   can change for other CVB if have GPIO enabled regulator*/
+				avdd_lcd-supply = <&vdd_disp_3v3>;
+				dvdd_lcd-supply = <&vdd_1v8_ap>;
+				avdd_dsi_csi-supply = <&spmic_sd1>;
+				vdd_lcd_bl-supply = <&battery_reg>;
+				vdd_lcd_bl_en-supply = <&vdd_bl_en>;
+			};
+			display@15210000 {
+				vdd-dp-pwr-supply = <&battery_reg>;
+				avdd-dp-pll-supply = <&battery_reg>;
+				vdd-edp-sec-mode-supply = <&battery_reg>;
+				vdd-dp-pad-supply = <&battery_reg>;
+				avdd_hdmi-supply = <&spmic_ldo7>;
+				avdd_hdmi_pll-supply = <&spmic_sd2>;
+				vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
+				/* Used fixed regulator for P3509 CVB,
+				   can change for other CVB if have GPIO enabled regulator*/
+				avdd_lcd-supply = <&vdd_disp_3v3>;
+				dvdd_lcd-supply = <&vdd_1v8_ap>;
+				avdd_dsi_csi-supply = <&spmic_sd1>;
+				vdd_lcd_bl-supply = <&battery_reg>;
+				vdd_lcd_bl_en-supply = <&vdd_bl_en>;
+			};
+			display@15220000 {
+				vdd-dp-pwr-supply = <&battery_reg>;
+				avdd-dp-pll-supply = <&battery_reg>;
+				vdd-edp-sec-mode-supply = <&battery_reg>;
+				vdd-dp-pad-supply = <&battery_reg>;
+				avdd_hdmi-supply = <&spmic_ldo7>;
+				avdd_hdmi_pll-supply = <&spmic_sd2>;
+				vdd_hdmi_5v0-supply = <&p3509_vdd_hdmi_5v0>;
+				/* Used fixed regulator for P3509 CVB,
+				   can change for other CVB if have GPIO enabled regulator*/
+				avdd_lcd-supply = <&vdd_disp_3v3>;
+				dvdd_lcd-supply = <&vdd_1v8_ap>;
+				avdd_dsi_csi-supply = <&spmic_sd1>;
+				vdd_lcd_bl-supply = <&battery_reg>;
+				vdd_lcd_bl_en-supply = <&vdd_bl_en>;
+			};
 		};
 		vi@15700000 {
 			avdd_dsi_csi-supply = <&spmic_sd1>;
